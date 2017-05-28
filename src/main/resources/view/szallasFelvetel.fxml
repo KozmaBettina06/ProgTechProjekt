@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="szallasok.viewController.SzallasFelvetelViewController">
+   <children>
+      <Label layoutX="192.0" layoutY="14.0" text="Új szálláshely felvétele">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="33.0" layoutY="70.0" prefHeight="200.0" prefWidth="500.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.0" minWidth="10.0" prefWidth="114.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.0" minWidth="10.0" prefWidth="426.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Szállás neve" />
+            <Label text="Szállás címe" GridPane.rowIndex="1" />
+            <Label text="Szállás típusa" GridPane.rowIndex="2" />
+            <TextField fx:id="szallas_neve_mezo" GridPane.columnIndex="1" />
+            <TextField fx:id="szallas_cime_mezo" promptText="Város, utca, házszám" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Házikedvenc barát" GridPane.rowIndex="3" />
+            <SplitMenuButton fx:id="szallas_tipusa_menu" mnemonicParsing="false" text="Kérem válasszon" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Apartman" />
+                <MenuItem mnemonicParsing="false" text="Magánszállás" />
+              </items>
+            </SplitMenuButton>
+            <SplitMenuButton fx:id="hazikedvenc_menu" mnemonicParsing="false" text="Kérem válasszon" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Igen" />
+                <MenuItem mnemonicParsing="false" text="Nem" />
+              </items>
+            </SplitMenuButton>
+            <Label alignment="TOP_LEFT" contentDisplay="RIGHT" text="Rövid leírás" GridPane.rowIndex="4">
+               <cursor>
+                  <Cursor fx:constant="S_RESIZE" />
+               </cursor>
+            </Label>
+            <TextArea fx:id="leiras_mezo" prefHeight="14.0" prefWidth="354.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Separator layoutX="192.0" layoutY="54.0" prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+      <GridPane layoutX="30.0" layoutY="290.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="35.0" prefWidth="119.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="41.0" prefWidth="47.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="177.0" minWidth="78.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="35.0" prefWidth="119.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="40.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="1. szoba">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label text="Egyszemélyes ágy" GridPane.rowIndex="1" />
+            <Label text="Férőhely" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" text="kétszemélyes ágy" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="egyes_egyszemelyes_agy" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="egyes_ketszemelyes_agy" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="33.0" text=" db" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label text=" db" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text=" Fő" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="egyes_ferohely" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Idegenforgalmi adó" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text=" Ft/fő" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="egyes_ado" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label text="Ár" GridPane.rowIndex="3" />
+            <TextField fx:id="egyes_ar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text=" Ft/fő/éj" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Separator layoutX="6.0" layoutY="280.0" prefWidth="200.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="4.0" />
+      <GridPane layoutX="32.0" layoutY="420.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="35.0" prefWidth="119.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="41.0" prefWidth="47.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.0" minWidth="78.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="35.0" prefWidth="119.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="40.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="2. szoba">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label text="Egyszemélyes ágy" GridPane.rowIndex="1" />
+            <Label text="Férőhely" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" text="kétszemélyes ágy" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="kettes_egyszemelyes_agy" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="kettes_ketszemelyes_agy" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="33.0" text=" db" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label text=" db" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text=" Fő" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="kettes_ferohely" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Idegenforgalmi adó" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text=" Ft/fő" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="kettes_ado" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label text="Ár" GridPane.rowIndex="3" />
+            <TextField fx:id="kettes_ar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text=" Ft/fő/éj" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="31.0" layoutY="540.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="35.0" prefWidth="119.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="46.0" prefWidth="47.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.0" minWidth="78.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="35.0" prefWidth="119.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="40.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="3. szoba">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label text="Egyszemélyes ágy" GridPane.rowIndex="1" />
+            <Label text="Férőhely" GridPane.rowIndex="2" />
+            <Label text="kétszemélyes ágy" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="harmas_egyszemelyes_agy" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="harmas_ketszemelyes_agy" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="33.0" text=" db" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label text=" db" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text=" Fő" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="harmas_ferohely" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Idegenforgalmi adó" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text=" Ft/fő" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="harmas_ado" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label text="Ár" GridPane.rowIndex="3" />
+            <TextField fx:id="harmas_ar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text=" Ft/fő/éj" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button layoutX="506.0" layoutY="660.0" mnemonicParsing="false" onAction="#kesz_gomb" prefHeight="25.0" prefWidth="64.0" text="Kész" />
+      <Button layoutX="408.0" layoutY="660.0" mnemonicParsing="false" text="Kijelentkezés" />
+   </children>
+</AnchorPane>

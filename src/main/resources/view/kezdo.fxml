@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="szallasok.viewController.KezdoViewController">
+    <children>
+        <Button layoutX="155.0" layoutY="125.0" mnemonicParsing="false" onAction="#szallasFelvetelButton" prefHeight="131.0" prefWidth="145.0" text="Új szállás felvétele" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="150.0">
+            <font>
+                <Font name="System Italic" size="15.0" />
+            </font>
+        </Button>
+        <Button layoutX="300.0" layoutY="125.0" mnemonicParsing="false" onAction="#szallasFoglalasButton" prefHeight="131.0" prefWidth="145.0" text="Szállás foglalás" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="150.0">
+            <font>
+                <Font name="System Italic" size="15.0" />
+            </font>
+        </Button>
+        <Label layoutX="132.0" layoutY="67.0" text="Magán szálláshely foglalás" textAlignment="CENTER" textFill="#c31212">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

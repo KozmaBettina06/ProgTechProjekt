@@ -3,11 +3,12 @@ package szallasok.viewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.TextField;
+import szallasok.BelepesService;
 import szallasok.FoglaloRegService;
 import szallasok.Main;
 
 
-import java.awt.*;
+import java.util.List;
 
 
 /**
@@ -48,8 +49,14 @@ public class FoglalasRegViewController {
         {
             FoglaloRegService foglaloRegisztracio = new FoglaloRegService();
             foglaloRegisztracio.regisztracio(regFelhasznalonev.getText(),regTeljesNev.getText(),regPass.getText(),regPassUjra.getText());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setContentText("Sikeres regisztracio, bejelentkezhet.\n");
+            alert.setHeaderText("Regisztracio");
+            alert.showAndWait();
+            mainApp.foglalasLoginViewShow();
         }
-        //ki kell jelentkeztetni még!!!!!!!!!!!!!!!!!
+
     }
 
     private boolean isValid()
@@ -69,6 +76,12 @@ public class FoglalasRegViewController {
         }
         if(!(regPass.getText().equals(regPassUjra.getText()))){
             hiba=hiba + "A ket jelszo nem egyezik meg.\n";
+        }
+        List<String> eredmeny = BelepesService.felhasznaloLista();
+        for (int i = 0; i < eredmeny.size(); i++){
+            if(regFelhasznalonev.getText().equals(eredmeny.get(i))){
+                hiba=hiba+"Mar van ilyen nevvel felhasznalo, valasszon mast.\n";
+            }
         }
 
         if (hiba.length() > 0) {

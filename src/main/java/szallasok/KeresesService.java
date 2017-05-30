@@ -40,6 +40,7 @@ public class KeresesService {
         query.setParameter("name", "%" +country +"%");
         query.setParameter("tipus",tipus);
 
+
         List<Szallasok> results = query.getResultList();
 
         manager.close();

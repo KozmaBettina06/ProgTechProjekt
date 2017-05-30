@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -24,7 +25,6 @@
          <children>
             <Label text="Felhasználónév" />
             <Label text="Jelszó" GridPane.rowIndex="1" />
-            <PasswordField fx:id="foglaloFelhasznaloTextfield" GridPane.columnIndex="1" />
             <PasswordField fx:id="foglaloPassfield" prefHeight="25.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <buttons>
@@ -32,6 +32,7 @@
                   <Button mnemonicParsing="false" onAction="#belepesButton" prefHeight="25.0" prefWidth="107.0" text="Bejelentkezés" />
               </buttons>
             </ButtonBar>
+            <TextField fx:id="foglaloFelhasznaloTextfield" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#visszaButton" text="Vissza" />

@@ -215,6 +215,70 @@ public class Szallasok {
     }
 
     @Transient
+    private boolean egyes=false;
+    @Transient
+    private boolean kettes=false;
+    @Transient
+    private boolean harmas=false;
+    @Transient
+    private LocalDate erkezes;
+
+    @Transient
+    private LocalDate tavozas;
+    @Transient
+    public LocalDate getErkezes() {
+        return erkezes;
+    }
+    @Transient
+    public void setErkezes(LocalDate erkezes) {
+        this.erkezes = erkezes;
+    }
+    @Transient
+    public LocalDate getTavozas() {
+        return tavozas;
+    }
+    @Transient
+    public void setTavozas(LocalDate tavozas) {
+        this.tavozas = tavozas;
+    }
+    @Transient
+    private int ferohely=0;
+
+    @Transient
+    public int getFerohely() {
+        return ferohely;
+    }
+
+    public void setFerohely(int ferohely) {
+        this.ferohely = ferohely;
+    }
+
+    @Transient
+    public boolean isEgyes() {
+        return egyes;
+    }
+    @Transient
+    public void setEgyes(boolean egyes) {
+        this.egyes = egyes;
+    }
+    @Transient
+    public boolean isKettes() {
+        return kettes;
+    }
+    @Transient
+    public void setKettes(boolean kettes) {
+        this.kettes = kettes;
+    }
+    @Transient
+    public boolean isHarmas() {
+        return harmas;
+    }
+    @Transient
+    public void setHarmas(boolean harmas) {
+        this.harmas = harmas;
+    }
+
+    @Transient
     @Override
     public String toString() {
         return "Szallasok{" +

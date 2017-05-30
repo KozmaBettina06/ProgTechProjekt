@@ -15,14 +15,31 @@ import java.util.List;
  */
 public class BelepesService {
 
-    public static List<Felhasznalok> felhasznaloLista()
+    public static List<String> felhasznaloLista()
     {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("Szallas");
         EntityManager manager = factory.createEntityManager();
 
-        TypedQuery<Felhasznalok> query =
-                manager.createQuery("SELECT f FROM Felhasznalok f", Felhasznalok.class);
-        List<Felhasznalok> results = query.getResultList();
+        TypedQuery<String> query =
+                manager.createQuery("SELECT f.felhasznalonev FROM Felhasznalok f", String.class);
+        List<String> results = query.getResultList();
+        manager.close();
+        factory.close();
+        return results;
+
+    }
+
+    public static String jelszoLista(String felhasznalonev)
+    {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Szallas");
+        EntityManager manager = factory.createEntityManager();
+
+        TypedQuery<String> query =
+                manager.createQuery("SELECT f.jelszo FROM Felhasznalok f where felhasznalonev like :name", String.class);
+        query.setParameter("name",felhasznalonev);
+        String results = query.getSingleResult();
+        manager.close();
+        factory.close();
         return results;
 
     }

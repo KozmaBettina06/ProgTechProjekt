@@ -1,6 +1,7 @@
 package szallasok.viewController;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import szallasok.Main;
@@ -34,11 +35,25 @@ public class FelvetelLoginViewController {
         {
             mainApp.szallasFelvetelShow();
         }
-        else
+        else if(felhasznaloTextField.getText().isEmpty() || jelszoTextField.getText().isEmpty())
         {
-            System.out.println("Illetektelen felhasznalo");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setContentText("A mezok kitoltese kotelezo.\n");
+            alert.setHeaderText("Hiba");
+            alert.showAndWait();
+            mainApp.foglalasLoginViewShow();
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setContentText("Illetektelen felhasznalo!\n");
+            alert.setHeaderText("Hiba");
+            alert.showAndWait();
+            mainApp.foglalasLoginViewShow();
         }
     }
+
     //*********************************
     public void visszaButton()
     {

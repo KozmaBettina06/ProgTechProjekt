@@ -177,6 +177,6 @@
          </children>
       </GridPane>
       <Button layoutX="506.0" layoutY="660.0" mnemonicParsing="false" onAction="#kesz_gomb" prefHeight="25.0" prefWidth="64.0" text="Kész" />
-      <Button layoutX="408.0" layoutY="660.0" mnemonicParsing="false" text="Kijelentkezés" />
+      <Button layoutX="408.0" layoutY="660.0" mnemonicParsing="false" onAction="#kijelentkezesButton" text="Kijelentkezés" />
    </children>
 </AnchorPane>

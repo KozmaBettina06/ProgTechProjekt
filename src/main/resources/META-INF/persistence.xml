@@ -9,6 +9,8 @@
         <!-- Entity classes -->
        <class>szallasok.model.Szallasok</class>
         <class>szallasok.model.Felhasznalok</class>
+        <class>szallasok.model.Foglalasok</class>
+
 
 
                <properties>

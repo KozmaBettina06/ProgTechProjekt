@@ -114,7 +114,7 @@ public class SzallasFelvetelViewController {
 
         if(isValid()) {
             SzallasFelvetelService szallasFelvetel = new SzallasFelvetelService();
-            szallasFelvetel.szallasLetrehozas(szallas_neve_mezo.getText(), szallas_cime_mezo.getText(), szallas_tipusa_menu.getText(), hazikedvenc_menu.getText(),leiras_mezo.getText(),
+            szallasFelvetel.szallasLetrehozas(szallas_neve_mezo.getText(), szallas_cime_mezo.getText(), szallas_tipusa_menu.getText(), hazikedvenc_menu.getText(), leiras_mezo.getText(),
                     Integer.parseInt(egyes_egyszemelyes_agy.getText()), Integer.parseInt(egyes_ketszemelyes_agy.getText()), Integer.parseInt(egyes_ferohely.getText()),
                     Integer.parseInt(egyes_ado.getText()), Integer.parseInt(egyes_ar.getText()),
                     Integer.parseInt(kettes_egyszemelyes_agy.getText()), Integer.parseInt(kettes_ketszemelyes_agy.getText()), Integer.parseInt(kettes_ferohely.getText()),
@@ -122,8 +122,18 @@ public class SzallasFelvetelViewController {
                     Integer.parseInt(harmas_egyszemelyes_agy.getText()), Integer.parseInt(harmas_ketszemelyes_agy.getText()), Integer.parseInt(harmas_ferohely.getText()),
                     Integer.parseInt(harmas_ado.getText()), Integer.parseInt(harmas_ar.getText()));
 
-            // ha kesz akkor minden mezo kitorlese majd kiirni infonak, hogy feltoltve
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setContentText("Sikeres felvetel.\n");
+            alert.setHeaderText("Szallas felvetel");
+            alert.showAndWait();
+            mainApp.szallasFelvetelShow();
         }
+    }
+
+    @FXML
+    public void kijelentkezesButton(){
+        mainApp.felvetelLoginViewShow();
     }
 
     private boolean isValid() {
